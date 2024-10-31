@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useContext } from "react";
 
@@ -14,11 +14,11 @@ export const ChangeAppTheme = () => {
 
   return (
     <div className="theme-switcher">
-      <Switch
-        checkedChildren={<SunFilled style={{ color: "rgb(15, 23, 42)" }} />}
-        unCheckedChildren={<MoonFilled />}
-        onChange={toggleTheme}
-      />
+    <Switch
+      checkedChildren={<SunFilled style={{ color: "rgb(15, 23, 42)" }} />}
+      unCheckedChildren={<MoonFilled />}
+      onChange={toggleTheme}
+    />
     </div>
   );
 };
