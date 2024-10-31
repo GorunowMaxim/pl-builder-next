@@ -1,3 +1,9 @@
+import { Header } from "widgets/header";
+
 export default function HomePage() {
-  return <h1>Hello World!</h1>
+  return (
+    <>
+      <Header />
+    </>
+  );
 }

@@ -1,0 +1,27 @@
+.ant-switch {
+  background-color: var(--inverted-color);
+
+  .ant-switch-handle {
+    &::before {
+      background-color: var(--background-color);
+    }
+  }
+
+  &:hover:not(.ant-switch-disabled) {
+    background-color: var(--inverted-color);
+  }
+}
+
+.ant-switch.ant-switch-checked {
+  background-color: var(--inverted-color);
+
+  .ant-switch-handle {
+    &::before {
+      background-color: var(--background-color);
+    }
+  }
+
+  &:hover:not(.ant-switch-disabled) {
+    background-color: var(--inverted-color);
+  }
+}
