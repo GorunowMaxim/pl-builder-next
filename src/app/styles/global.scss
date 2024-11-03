@@ -2,38 +2,76 @@
   &_light {
     --background-color: rgb(246, 246, 246);
     --text-color: rgb(15, 23, 42);
+    --border-color: rgb(232, 234, 238);
     --inverted-color: rgb(15, 23, 42);
   }
 
   &_dark {
     --background-color: rgb(15, 23, 42);
     --text-color: rgb(246, 246, 246);
+    --border-color: rgb(232, 234, 238);
     --inverted-color: rgb(246, 246, 246);
   }
 }
 
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Titillium Web";
 }
 
-.link{
+.link {
   position: relative;
-  
+
   &::after {
-      content: '';
-      position: absolute;
-      height: 2px;
-      left: 50%;
-      bottom: 0;
-      width: 0;
-      background-color: var(--text-color);
-      transition: all 0.3s;
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    background-color: var(--text-color);
+    transition: all 0.3s;
   }
 
   &:hover::after {
-      width: 100%;
-      left: 0;
+    width: 100%;
+    left: 0;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(15, 23, 42);
+  line-height: 1.17;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 18px;
 }
