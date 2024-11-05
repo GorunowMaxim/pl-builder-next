@@ -22,7 +22,9 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={titillium.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <div className="wrapper">
+          <ThemeProvider>{children}</ThemeProvider>
+        </div>
       </body>
     </html>
   );

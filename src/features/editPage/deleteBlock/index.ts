@@ -1,0 +1,1 @@
+export { DeleteBlock } from './ui/deleteBlock'; 

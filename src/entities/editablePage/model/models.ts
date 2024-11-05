@@ -5,7 +5,6 @@ export type PageBlock = {
 };
 
 export type PageState = {
-  id: number;
   projectId: number;
   title: string;
   blocks: PageBlock[];

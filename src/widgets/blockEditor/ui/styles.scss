@@ -1,0 +1,31 @@
+.block-editor {
+  &__wrapper {
+    position: relative;
+  }
+}
+
+.button-blocks {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edite-block-button {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgb(238, 238, 238);
+    transition: 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,10 @@
+.editable-page {
+  width: 100%;
+  background-color: white;
+  
+  &__wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}

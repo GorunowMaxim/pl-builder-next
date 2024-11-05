@@ -1,23 +1,27 @@
 .theme-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  transition: 0.3s ease-in-out;
+
   &_light {
     --background-color: rgb(246, 246, 246);
+    --accent-color: rgb(57, 117, 255);
     --text-color: rgb(15, 23, 42);
-    --border-color: rgb(232, 234, 238);
+    --border-color: rgba(61, 71, 81, 0.302);
     --inverted-color: rgb(15, 23, 42);
   }
 
   &_dark {
-    --background-color: rgb(15, 23, 42);
+    --background-color: rgb(24, 27, 34);
+    --accent-color: rgb(57, 117, 255);
     --text-color: rgb(246, 246, 246);
-    --border-color: rgb(232, 234, 238);
+    --border-color: rgba(61, 71, 81, 0.302);
     --inverted-color: rgb(246, 246, 246);
   }
 }
-
 .wrapper {
-  width: 100vw;
-  min-height: 100vh;
-  font-family: "Titillium Web";
+  position: relative;
 }
 
 .link {
@@ -46,10 +50,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: rgb(15, 23, 42);
+  color: var(--text-color);
   line-height: 1.17;
   font-weight: 600;
   margin: 8px 0;
+  transition: 0.3s ease-in-out;
 }
 
 h1 {
@@ -74,4 +79,9 @@ h5 {
 
 h6 {
   font-size: 18px;
+}
+
+p {
+  color: var(--text-color);
+  transition: 0.3s ease-in-out;
 }
