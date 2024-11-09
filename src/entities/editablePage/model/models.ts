@@ -1,11 +1,11 @@
-export type PageBlock = {
+export type VirtualNode = {
   type: React.ElementType;
-  props: any;
-  children: (PageBlock | string)[];
+  props: { [index: string]: any };
+  children: (VirtualNode | string)[];
 };
 
 export type PageState = {
   projectId: number;
   title: string;
-  blocks: PageBlock[];
+  blocks: VirtualNode[];
 }

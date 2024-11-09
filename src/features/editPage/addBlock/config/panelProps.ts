@@ -1,8 +1,8 @@
-import { PageBlock } from "entities/editablePage";
+import { VirtualNode } from "entities/editablePage";
 
 type ButtonData = {
   buttonTitle: string;
-  data: PageBlock;
+  data: VirtualNode;
 };
 
 export const buttonConfig: ButtonData[] = [

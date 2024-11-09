@@ -1,6 +1,6 @@
-import { PageBlock } from "../model/models";
+import { VirtualNode } from "../model/models";
 
-export const changeBlockPosition = (direction: string, index: number, blocks: PageBlock[]): PageBlock[] => {
+export const changeBlockPosition = (direction: string, index: number, blocks: VirtualNode[]): VirtualNode[] => {
   const newBlocks = [...blocks];
   const diff = direction === 'down' ? 1 : -1;
 
