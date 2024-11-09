@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowDownOutlined } from "@ant-design/icons";
 
 import { translateBlockDown } from "entities/editablePage/model/store";

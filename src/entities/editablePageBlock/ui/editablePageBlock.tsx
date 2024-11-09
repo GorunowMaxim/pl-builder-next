@@ -1,3 +1,5 @@
+'use client'
+
 import { ElementType, useState } from "react";
 
 import { VirtualNode } from "entities/editablePage";

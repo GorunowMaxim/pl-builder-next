@@ -1,3 +1,5 @@
+'use client'
+
 import { DeleteFilled } from "@ant-design/icons";
 
 import { deleteBlock } from "entities/editablePage";

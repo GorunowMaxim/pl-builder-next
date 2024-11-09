@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowUpOutlined } from "@ant-design/icons";
 
 import { translateBlockUp } from "entities/editablePage/model/store";
