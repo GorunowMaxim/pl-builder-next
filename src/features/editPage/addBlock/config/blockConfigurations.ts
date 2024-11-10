@@ -24,33 +24,58 @@ export const blockConfigurations: BlockConfig[] = [
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              gap: '15px',
             }
           },
           children: [
             {
-              type: "h4",
+              type: "div",
               props: {
-                className: "hero-section__subtitle",
-                style: { color: 'black' }
+                className: "subtitle-wrapper",
               },
-              children: ["subtitle"],
+              children: [
+                {
+                  type: "h4",
+                  props: {
+                    className: "hero-section__subtitle",
+                    style: { color: 'black' }
+                  },
+                  children: ["subtitle"],
+                },
+              ],
             },
             {
-              type: "h1",
+              type: "div",
               props: {
-                className: "hero-section__headline",
-                style: { color: 'black' }
+                className: "headline-wrapper",
               },
-              children: ["Hero section"],
+              children: [
+                {
+                  type: "h1",
+                  props: {
+                    className: "hero-section__headline",
+                    style: { color: 'black' }
+                  },
+                  children: ["Hero section"],
+                },
+              ],
             },
             {
-              type: "p",
+              type: "div",
               props: {
-                className: "hero-section__text",
-                style: { width: '600px', fontSize: '22px', textAlign: 'center', color: 'black' }
+                className: "text-wrapper text-wrapper_center",
               },
-              children: ["Hey yeah! It's a hero section, here u can describe your landing, tell about it a little or write what u wanna!"],
+              children: [
+                {
+                  type: "p",
+                  props: {
+                    className: "hero-section__text p",
+                    style: { textAlign: 'center', color: 'black' }
+                  },
+                  children: ["Hey yeah! It's a hero section, here u can describe your landing, tell about it a little or write what u wanna!"],
+                },
+              ],
             },
           ],
         },

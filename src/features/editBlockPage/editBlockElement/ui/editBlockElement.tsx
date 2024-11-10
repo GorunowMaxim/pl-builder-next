@@ -6,6 +6,8 @@ import { editVirtualBlock } from "entities/editablePage";
 
 import { EditBlockElementProps } from "shared/types";
 
+import "./styles.scss";
+
 export const EditBlockElement = ({
   blockIndex,
   elementIndex,
@@ -37,7 +39,7 @@ export const EditBlockElement = ({
         onChange={(e) => editVirtualBlock(blockIndex, elementIndex, e.target.value, type, props)}
         type="text"
         value={value}
-        className="castom-form__input"
+        className={`custom-form__input ${type}`}
       />
     </form>
   );
