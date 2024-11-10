@@ -21,7 +21,13 @@ export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePa
         {block.children.map((child: VirtualNode | string) => {
           if (typeof child !== "string") {
             const block = child;
-            return EditablePageBlock({ block, index, EditBlockElement });
+            return (
+              <EditablePageBlock
+                block={block}
+                index={index}
+                EditBlockElement={EditBlockElement}
+              />
+            );
           }
 
           return child;
@@ -35,7 +41,13 @@ export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePa
       {block.children.map((child: VirtualNode | string, elemIndex: number): any => {
         if (typeof child !== "string") {
           const block = child;
-          return EditablePageBlock({ block, index, EditBlockElement });
+          return (
+            <EditablePageBlock
+              block={block}
+              index={index}
+              EditBlockElement={EditBlockElement}
+            />
+          );
         }
 
         return (
@@ -54,7 +66,13 @@ export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePa
     <block.type {...block.props} onClick={() => setRedactState(true)}>
       {block.children.map((block: VirtualNode | string) => {
         if (typeof block !== "string") {
-          return EditablePageBlock({ block, index, EditBlockElement });
+          return (
+            <EditablePageBlock
+              block={block}
+              index={index}
+              EditBlockElement={EditBlockElement}
+            />
+          );
         }
 
         return block;

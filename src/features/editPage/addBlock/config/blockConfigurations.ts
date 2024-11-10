@@ -122,48 +122,137 @@ export const blockConfigurations: BlockConfig[] = [
     },
   },
   {
-    title: "hero section",
+    title: "content block",
     template: {
       type: "section",
       props: {
-        className: "hero-section",
-        style: { height: 'calc(100vh - 70px)' }
+        className: "content-section",
+        style: { padding: '20px' }
       },
       children: [
         {
           type: "div",
           props: {
-            className: "hero-section__wrapper",
+            className: "content-section__wrapper",
             style: {
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              gap: '10px',
             }
           },
           children: [
             {
-              type: "h4",
+              type: "h2",
               props: {
-                className: "hero-section__subtitle",
+                className: "content-section__headline",
               },
-              children: ["subtitle"],
-            },
-            {
-              type: "h1",
-              props: {
-                className: "hero-section__headline",
-              },
-              children: ["Hero section"],
+              children: ["Headline - tell smth about it"],
             },
             {
               type: "p",
               props: {
-                className: "hero-section__text",
-                style: { width: '600px', fontSize: '22px', textAlign: 'center' }
+                className: "content-section__text p",
               },
-              children: ["Hey yeah! It's a hero section, here u can describe your landing, tell about it a little or write what u wanna!"],
+              children: ["Description – the main idea. Use 1-2 sentences in 1-3 lines if centered. For more text, use a different content alignment type."],
+            },
+            {
+              type: "div",
+              props: {
+                className: "content-section__blocks",
+              },
+              children: [
+                {
+                  type: "div",
+                  props: {
+                    className: "content-section__block",
+                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '35px 0', gap: '25px' }
+                  },
+                  children: [
+                    {
+                      type: 'div',
+                      props: {
+                        className: 'content-section__block-img',
+                        style: { width: '500px', height: '500px', backgroundColor: 'grey' }
+                      },
+                      children: []
+                    },
+                    {
+                      type: 'div',
+                      props: {
+                        className: 'content-section__block-info',
+                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', }
+                      },
+                      children: [
+                        {
+                          type: 'h4',
+                          props: {
+                            className: 'content-section__block-info-headline'
+                          },
+                          children: [
+                            'subtitle'
+                          ]
+                        },
+                        {
+                          type: 'p',
+                          props: {
+                            className: 'content-section__block-info-headline p'
+                          },
+                          children: [
+                            'describe 3-5 lines'
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                },
+                {
+                  type: "div",
+                  props: {
+                    className: "content-section__block",
+                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row-reverse' , padding: '35px 0', gap: '25px' }
+                  },
+                  children: [
+                    {
+                      type: 'div',
+                      props: {
+                        className: 'content-section__block-img',
+                        style: { width: '500px', height: '500px', backgroundColor: 'grey' }
+                      },
+                      children: []
+                    },
+                    {
+                      type: 'div',
+                      props: {
+                        className: 'content-section__block-info',
+                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', }
+                      },
+                      children: [
+                        {
+                          type: 'h4',
+                          props: {
+                            className: 'content-section__block-info-headline'
+                          },
+                          children: [
+                            'subtitle'
+                          ]
+                        },
+                        {
+                          type: 'p',
+                          props: {
+                            className: 'content-section__block-info-headline p'
+                          },
+                          children: [
+                            'describe 3-5 lines'
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                },
+              ],
             },
           ],
         },
