@@ -1,6 +1,8 @@
-import { VirtualNode } from "../model/models";
+import { VirtualNode } from "shared/types";
 
-export const changeBlockPosition = (direction: string, index: number, blocks: VirtualNode[]): VirtualNode[] => {
+type TranslateVirtualBlock = (direction: string, index: number, blocks: VirtualNode[]) => VirtualNode[]
+
+export const translateVirtualBlock: TranslateVirtualBlock = (direction, index, blocks) => {
   const newBlocks = [...blocks];
   const diff = direction === 'down' ? 1 : -1;
 

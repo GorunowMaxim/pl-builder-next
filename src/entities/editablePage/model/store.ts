@@ -1,40 +1,38 @@
 import { create } from "zustand";
 
-import { ElementType } from "react";
+import { translateVirtualBlock } from "../lib/translateVirtualBlock";
+import { editVirtualElement } from "../lib/editVirtualElement";
+import { updateVirtualBlocks } from "../lib/updateVirtualBlocks";
 
-import { VirtualNode, PageState } from "./models";
-import { changeBlockPosition } from "../lib/changeBlockPosition";
-import { editBlockElement } from "../lib/editBlockElement";
-import { updateBlocks } from "../lib/updateBlocks";
+import { EditVirtualBlock, VirtualTree } from "./models";
+import { VirtualNode } from "shared/types";
 
-export const usePageStore = create<PageState>(() => ({
-  id: '',
+export const usePageStore = create<VirtualTree>(() => ({
   projectId: 0,
   title: '',
   blocks: [],
 }))
 
-export const addBlock = (block: VirtualNode) => {
+export const addVirtualBlock = (block: VirtualNode) => {
   usePageStore.setState((state) => ({ blocks: [...state.blocks, block] }))
 };
 
-export const deleteBlock = (index: number) => {
+export const deleteVirtualBlock = (index: number) => {
   usePageStore.setState((state) => ({ blocks: [...state.blocks.filter((_block, blockIndex) => blockIndex !== index)] }))
 };
 
-export const translateBlockUp = (index: number) => {
-  usePageStore.setState((state) => ({ blocks: [...changeBlockPosition('up', index, state.blocks)] }));
+export const translateVirtualBlockUp = (index: number) => {
+  usePageStore.setState((state) => ({ blocks: [...translateVirtualBlock('up', index, state.blocks)] }));
 };
 
-export const translateBlockDown = (index: number) => {
-  usePageStore.setState((state) => ({ blocks: [...changeBlockPosition('down', index, state.blocks)] }));
+export const translateVirtualBlockDown = (index: number) => {
+  usePageStore.setState((state) => ({ blocks: [...translateVirtualBlock('down', index, state.blocks)] }));
 };
 
-export const editVirtualBlock = (
-  blockIndex: number, elementIndex: number, value: string, type: ElementType, props: { [index: string]: any }) => {
+export const editVirtualBlock: EditVirtualBlock = (blockIndex, elementIndex, value, type, props) => {
 
   usePageStore.setState((state) => ({
     blocks:
-      [...updateBlocks(state.blocks, blockIndex, editBlockElement(elementIndex, value, state.blocks[blockIndex], type, props))]
+      [...updateVirtualBlocks(state.blocks, blockIndex, editVirtualElement(elementIndex, value, state.blocks[blockIndex], type, props))]
   }))
 }

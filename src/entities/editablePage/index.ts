@@ -1,10 +1,10 @@
 export { EditablePage } from './ui/editablePage';
-export { type PageState, type VirtualNode } from "./model/models";
+export { type VirtualTree } from "./model/models";
 export {
-  addBlock,
-  deleteBlock,
+  addVirtualBlock,
+  deleteVirtualBlock,
   editVirtualBlock,
-  translateBlockDown,
-  translateBlockUp,
+  translateVirtualBlockDown,
+  translateVirtualBlockUp,
   usePageStore
 } from './model/store';

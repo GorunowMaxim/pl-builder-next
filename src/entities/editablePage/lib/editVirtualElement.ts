@@ -1,12 +1,15 @@
 import { ElementType } from "react";
-import { VirtualNode } from "../model/models";
+import { VirtualNode } from "shared/types";
 
-export const editBlockElement = (
+type EditVirtualElement = (
   elementIndex: number,
   value: string,
   block: VirtualNode,
   type: ElementType,
-  props: { [index: string]: any }): VirtualNode => {
+  props: { [index: string]: any }
+) => VirtualNode;
+
+export const editVirtualElement: EditVirtualElement = (elementIndex, value, block, type, props) => {
   const currentBlock = block;
   if (currentBlock.type === type && currentBlock.props === props) {
     currentBlock.children[elementIndex] = value;
@@ -15,7 +18,7 @@ export const editBlockElement = (
 
   currentBlock.children.map((child) => {
     if (typeof (child) !== 'string') {
-      return editBlockElement(elementIndex, value, child, type, props)
+      return editVirtualElement(elementIndex, value, child, type, props)
     }
   })
 

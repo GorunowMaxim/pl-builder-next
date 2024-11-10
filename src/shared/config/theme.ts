@@ -9,7 +9,7 @@ type ThemeContextProps = {
 
 const defaultThemeContext: ThemeContextProps = {
   theme: 'light',
-  toggleTheme: () => { },
+  toggleTheme: () => {},
 };
 
 const ThemeContext = createContext<ThemeContextProps>(defaultThemeContext);

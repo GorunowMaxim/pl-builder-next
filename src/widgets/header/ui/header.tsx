@@ -3,11 +3,13 @@ import { CustomLink } from "shared/ui/link";
 
 import "./styles.scss";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header-wrapper">
-        <CustomLink className="preview-button link" href="#">preview</CustomLink>
+        <CustomLink className="preview-button link" href="#">
+          preview
+        </CustomLink>
         <ChangeAppTheme />
       </div>
     </header>

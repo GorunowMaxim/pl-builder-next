@@ -1,14 +1,14 @@
-import { VirtualNode } from "entities/editablePage";
+import { VirtualNode } from "shared/types";
 
-type ButtonData = {
-  buttonTitle: string;
-  data: VirtualNode;
+type BlockConfig = {
+  title: string;
+  template: VirtualNode;
 };
 
-export const buttonConfig: ButtonData[] = [
+export const blockConfigurations: BlockConfig[] = [
   {
-    buttonTitle: "hero section",
-    data: {
+    title: "hero section",
+    template: {
       type: "section",
       props: {
         className: "hero-section",
@@ -58,8 +58,8 @@ export const buttonConfig: ButtonData[] = [
     },
   },
   {
-    buttonTitle: "text",
-    data: {
+    title: "text",
+    template: {
       type: "section",
       props: {
         className: "info",
@@ -97,8 +97,8 @@ export const buttonConfig: ButtonData[] = [
     },
   },
   {
-    buttonTitle: "hero section",
-    data: {
+    title: "hero section",
+    template: {
       type: "section",
       props: {
         className: "hero-section",
@@ -146,8 +146,8 @@ export const buttonConfig: ButtonData[] = [
     },
   },
   {
-    buttonTitle: "gallery",
-    data: {
+    title: "gallery",
+    template: {
       type: "section",
       props: {
         className: "carousel",

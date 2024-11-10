@@ -1,0 +1,19 @@
+.link {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    background-color: var(--text-color);
+    transition: all 0.3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}

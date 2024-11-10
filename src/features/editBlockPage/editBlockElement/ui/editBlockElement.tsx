@@ -1,19 +1,19 @@
 "use client";
 
-import { ElementType, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { editVirtualBlock } from "entities/editablePage";
 
-type EditBlockElementProps = {
-  blockIndex: number;
-  elementIndex: number;
-  props: { [index: string]: any };
-  type: ElementType;
-  value: string;
-  onSubmit: (arg: boolean) => void;
-};
+import { EditBlockElementProps } from "shared/types";
 
-export const EditBlockElement = ({ blockIndex, elementIndex, props, type, value, onSubmit }: EditBlockElementProps) => {
+export const EditBlockElement = ({
+  blockIndex,
+  elementIndex,
+  props,
+  type,
+  value,
+  onSubmit,
+}: EditBlockElementProps): JSX.Element => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 

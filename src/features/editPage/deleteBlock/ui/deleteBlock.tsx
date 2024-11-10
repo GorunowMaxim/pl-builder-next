@@ -2,13 +2,13 @@
 
 import { DeleteFilled } from "@ant-design/icons";
 
-import { deleteBlock } from "entities/editablePage";
+import { deleteVirtualBlock } from "entities/editablePage";
 
 import "features/editPage/styles.scss";
 
-export const DeleteBlock = ({ index }: { index: number }) => {
+export const DeleteBlock = ({ index }: { index: number }): JSX.Element => {
   return (
-    <button onClick={() => deleteBlock(index)} className="edite-block-button">
+    <button onClick={() => deleteVirtualBlock(index)} className="edite-block-button">
       <DeleteFilled />
     </button>
   );

@@ -9,7 +9,7 @@ import { EditablePageBlock } from "entities/editablePageBlock";
 
 import "./styles.scss";
 
-export const PageEditor = () => {
+export const PageEditor = (): JSX.Element => {
   const blocks = usePageStore((state) => state.blocks);
   return (
     <EditablePage>

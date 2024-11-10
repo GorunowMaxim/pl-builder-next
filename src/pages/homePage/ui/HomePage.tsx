@@ -3,7 +3,7 @@ import { PageEditor } from "widgets/pageEditor";
 
 import { AddBlockPanel } from "features/editPage/addBlock";
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   return (
     <>
       <Header />

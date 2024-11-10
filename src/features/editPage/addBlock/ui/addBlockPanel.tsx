@@ -1,19 +1,19 @@
 "use client";
 
-import { addBlock } from "entities/editablePage";
+import { addVirtualBlock } from "entities/editablePage";
 
-import { buttonConfig } from "../config/panelProps";
+import { blockConfigurations } from "../config/blockConfigurations";
 
 import "./styles.scss";
 
-export const AddBlockPanel = () => {
+export const AddBlockPanel = (): JSX.Element => {
   return (
     <div className="add-panel">
       <div className="add-panel__wrapper">
-        {buttonConfig.map((pageBlock, id) => {
+        {blockConfigurations.map((block, id) => {
           return (
-            <button key={id} onClick={() => addBlock(pageBlock.data)} className="add-panel__button">
-              {pageBlock.buttonTitle}
+            <button key={id} onClick={() => addVirtualBlock(block.template)} className="add-panel__button">
+              {block.title}
             </button>
           );
         })}

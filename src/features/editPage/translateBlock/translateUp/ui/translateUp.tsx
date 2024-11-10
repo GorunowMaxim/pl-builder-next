@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
 import { ArrowUpOutlined } from "@ant-design/icons";
 
-import { translateBlockUp } from "entities/editablePage/model/store";
+import { translateVirtualBlockUp } from "entities/editablePage";
 
 import "features/editPage/styles.scss";
 
-export const TranslateUp = ({ index }: { index: number }) => {
+export const TranslateUp = ({ index }: { index: number }): JSX.Element => {
   return (
-    <button onClick={() => translateBlockUp(index)} className="edite-block-button">
+    <button onClick={() => translateVirtualBlockUp(index)} className="edite-block-button">
       <ArrowUpOutlined />
     </button>
   );

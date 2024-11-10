@@ -2,18 +2,9 @@
 
 import { ElementType, useState } from "react";
 
-import { VirtualNode } from "entities/editablePage";
+import { EditBlockElementProps, VirtualNode } from "shared/types";
 
 const redactElements: ElementType[] = ["p", "h1", "h2", "h3", "h4", "h5", "h6"];
-
-type EditBlockElementProps = {
-  blockIndex: number;
-  elementIndex: number;
-  props: { [index: string]: any };
-  type: ElementType;
-  value: string;
-  onSubmit: (arg: boolean) => void;
-};
 
 type EditablePageBlockProps = {
   block: VirtualNode;
@@ -21,7 +12,7 @@ type EditablePageBlockProps = {
   EditBlockElement: ({ blockIndex, elementIndex, props, type, value, onSubmit }: EditBlockElementProps) => JSX.Element;
 };
 
-export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePageBlockProps) => {
+export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePageBlockProps): JSX.Element => {
   const [isRedact, setRedactState] = useState<boolean>(false);
 
   if (!redactElements.includes(block.type)) {
