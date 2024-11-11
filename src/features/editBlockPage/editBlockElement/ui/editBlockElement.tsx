@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { editVirtualBlock } from "entities/editablePage";
 
-import { EditBlockElementProps } from "shared/types";
+import {EditBlockElementProps } from "shared/types";
 
 import "./styles.scss";
 
@@ -14,8 +14,10 @@ export const EditBlockElement = ({
   props,
   type,
   value,
-  onSubmit,
+  setRedactState,
 }: EditBlockElementProps): JSX.Element => {
+  const [inputValue, setInputValue] = useState<string>(value);
+
   const formRef = useRef<HTMLFormElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -32,13 +34,18 @@ export const EditBlockElement = ({
     };
   }, []);
 
+  const onSubmit = () => {
+    setRedactState(false);
+    editVirtualBlock(blockIndex, elementIndex, inputValue, type, props);
+  };
+
   return (
-    <form onSubmit={() => onSubmit(false)} ref={formRef} className="custom-form">
+    <form onSubmit={onSubmit} ref={formRef} className="custom-form">
       <input
         ref={inputRef}
-        onChange={(e) => editVirtualBlock(blockIndex, elementIndex, e.target.value, type, props)}
+        onChange={(e) => setInputValue(e.target.value)}
         type="text"
-        value={value}
+        value={inputValue}
         className={`custom-form__input ${type}`}
       />
     </form>

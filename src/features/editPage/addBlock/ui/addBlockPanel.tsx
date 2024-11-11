@@ -12,7 +12,14 @@ export const AddBlockPanel = (): JSX.Element => {
       <div className="add-panel__wrapper">
         {blockConfigurations.map((block, id) => {
           return (
-            <button key={id} onClick={() => addVirtualBlock(block.template)} className="add-panel__button">
+            <button
+              key={id}
+              onClick={() => {
+                const copyTemplate = JSON.parse(JSON.stringify(block.template));
+                addVirtualBlock(copyTemplate);
+              }}
+              className="add-panel__button"
+            >
               {block.title}
             </button>
           );

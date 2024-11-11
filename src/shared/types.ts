@@ -10,5 +10,5 @@ export type EditBlockElementProps = {
   props: { [index: string]: any };
   type: React.ElementType;
   value: string;
-  onSubmit: (arg: boolean) => void;
+  setRedactState: (arg: boolean) => void;
 };

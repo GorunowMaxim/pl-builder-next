@@ -15,7 +15,7 @@ export const PageEditor = (): JSX.Element => {
     <EditablePage>
       {blocks.map((block, index) => {
         return (
-          <div className="block-editor">
+          <div key={index} className="block-editor">
             <div className="block-editor__wrapper">
               <EditablePageBlock block={block} index={index} EditBlockElement={EditBlockElement} />
               <div className="block-editor__features">

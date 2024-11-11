@@ -127,7 +127,7 @@ export const blockConfigurations: BlockConfig[] = [
       type: "section",
       props: {
         className: "content-section",
-        style: { padding: '20px' }
+        style: { padding: '30px 0' }
       },
       children: [
         {
@@ -135,7 +135,7 @@ export const blockConfigurations: BlockConfig[] = [
           props: {
             className: "content-section__wrapper",
             style: {
-              height: '100%',
+              height: 'auto',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -145,19 +145,38 @@ export const blockConfigurations: BlockConfig[] = [
           },
           children: [
             {
-              type: "h2",
+              type: "div",
               props: {
-                className: "content-section__headline",
+                className: "headline-wrapper",
               },
-              children: ["Headline - tell smth about it"],
+              children: [
+                {
+                  type: "h2",
+                  props: {
+                    className: "content-section__headline",
+                    style: { textAlign: 'center' }
+                  },
+                  children: ["Headline - tell smth about it"],
+                },
+              ],
             },
             {
-              type: "p",
+              type: "div",
               props: {
-                className: "content-section__text p",
+                className: "text-wrapper",
               },
-              children: ["Description – the main idea. Use 1-2 sentences in 1-3 lines if centered. For more text, use a different content alignment type."],
+              children: [
+                {
+                  type: "p",
+                  props: {
+                    className: "content-section__text p",
+                    style: { textAlign: 'center' }
+                  },
+                  children: ["Description – the main idea. Use 1-2 sentences in 1-3 lines if centered. For more text, use a different content alignment type."],
+                },
+              ],
             },
+
             {
               type: "div",
               props: {
@@ -168,22 +187,31 @@ export const blockConfigurations: BlockConfig[] = [
                   type: "div",
                   props: {
                     className: "content-section__block",
-                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '35px 0', gap: '25px' }
+                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '55px 0', gap: '55px' }
                   },
                   children: [
                     {
                       type: 'div',
                       props: {
                         className: 'content-section__block-img',
-                        style: { width: '500px', height: '500px', backgroundColor: 'grey' }
+                        style: { width: '500px', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F7F8FA', borderRadius: '10px' }
                       },
-                      children: []
+                      children: [
+                        {
+                          type: 'img',
+                          props: {
+                            src: '/icons/iconImage.svg',
+                            style: { width: '45px', height: '45px' }
+                          },
+                          children: []
+                        }
+                      ]
                     },
                     {
                       type: 'div',
                       props: {
                         className: 'content-section__block-info',
-                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', }
+                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', gap: '10px' }
                       },
                       children: [
                         {
@@ -212,22 +240,31 @@ export const blockConfigurations: BlockConfig[] = [
                   type: "div",
                   props: {
                     className: "content-section__block",
-                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row-reverse' , padding: '35px 0', gap: '25px' }
+                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row-reverse', padding: '35px 0', gap: '55px' }
                   },
                   children: [
                     {
                       type: 'div',
                       props: {
                         className: 'content-section__block-img',
-                        style: { width: '500px', height: '500px', backgroundColor: 'grey' }
+                        style: { width: '500px', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F7F8FA', borderRadius: '10px' }
                       },
-                      children: []
+                      children: [
+                        {
+                          type: 'img',
+                          props: {
+                            src: '/icons/iconImage.svg',
+                            style: { width: '45px', height: '45px' }
+                          },
+                          children: []
+                        }
+                      ]
                     },
                     {
                       type: 'div',
                       props: {
                         className: 'content-section__block-info',
-                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', }
+                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', gap: '10px' }
                       },
                       children: [
                         {
@@ -274,6 +311,48 @@ export const blockConfigurations: BlockConfig[] = [
             style: { padding: '20px 0', width: '600px', fontSize: '22px', textAlign: 'center', margin: '0 auto' }
           },
           children: ['In development...'],
+        },
+      ],
+    },
+  },
+  {
+    title: "FAQ",
+    template: {
+      type: "section",
+      props: {
+        className: "faq",
+        style: { padding: '50px 0' }
+      },
+      children: [
+        {
+          type: "div",
+          props: {
+            className: "faq-section__wrapper",
+            style: {
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '15px',
+            }
+          },
+          children: [
+            {
+              type: "h2",
+              props: {
+                className: "faq-section__headline",
+              },
+              children: ["FAQ"],
+            },
+            {
+              type: "p",
+              props: {
+                className: "faq-section__text p",
+              },
+              children: ["FAQ"],
+            },
+          ],
         },
       ],
     },
