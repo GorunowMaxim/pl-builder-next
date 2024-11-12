@@ -39,7 +39,7 @@ export const blockConfigurations: BlockConfig[] = [
                   type: "h4",
                   props: {
                     className: "hero-section__subtitle",
-                    style: { color: 'black' }
+                    style: { color: 'black', textAlign: 'center' }
                   },
                   children: ["subtitle"],
                 },
@@ -55,7 +55,7 @@ export const blockConfigurations: BlockConfig[] = [
                   type: "h1",
                   props: {
                     className: "hero-section__headline",
-                    style: { color: 'black' }
+                    style: { color: 'black', textAlign: 'center' }
                   },
                   children: ["Hero section"],
                 },
@@ -96,26 +96,35 @@ export const blockConfigurations: BlockConfig[] = [
           props: {
             className: "info-section__wrapper",
             style: {
-              height: '100%',
-              maxWidth: '1200px',
-              margin: '0 auto',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
             }
           },
           children: [
             {
-              type: "p",
+              type: "div",
               props: {
-                className: "info-section__text",
-                style: {
-                  width: '100%',
-                  fontSize: '16px',
-                  textAlign: 'center',
-                  color: 'black',
-                  backgroundColor: 'white'
-                }
+                className: "text-wrapper",
               },
-              children: ["Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied. Front matter, or preliminaries, is the first section of a book and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed or printed, on either display pages or blank pages."],
+              children: [
+                {
+                  type: "p",
+                  props: {
+                    className: "info-section__text p",
+                    style: {
+                      width: '100%',
+                      textAlign: 'center',
+                      color: 'black',
+                      backgroundColor: 'white'
+                    }
+                  },
+                  children: ["Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied. Front matter, or preliminaries, is the first section of a book and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed or printed, on either display pages or blank pages."],
+                },
+              ],
             },
+
           ],
         },
       ],
@@ -176,7 +185,6 @@ export const blockConfigurations: BlockConfig[] = [
                 },
               ],
             },
-
             {
               type: "div",
               props: {
@@ -215,21 +223,39 @@ export const blockConfigurations: BlockConfig[] = [
                       },
                       children: [
                         {
-                          type: 'h4',
+                          type: 'div',
                           props: {
-                            className: 'content-section__block-info-headline'
+                            className: 'headline-wrapper'
                           },
                           children: [
-                            'subtitle'
+                            {
+                              type: 'h4',
+                              props: {
+                                className: 'content-section__block-info-headline',
+                                style: { textAlign: 'center' }
+                              },
+                              children: [
+                                'subtitle'
+                              ]
+                            },
                           ]
                         },
                         {
-                          type: 'p',
+                          type: 'div',
                           props: {
-                            className: 'content-section__block-info-headline p'
+                            className: 'text-wrapper'
                           },
                           children: [
-                            'describe 3-5 lines'
+                            {
+                              type: 'p',
+                              props: {
+                                className: 'content-section__block-info-headline p',
+                                style: { textAlign: 'center' }
+                              },
+                              children: [
+                                'describe 3-5 lines'
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -268,21 +294,39 @@ export const blockConfigurations: BlockConfig[] = [
                       },
                       children: [
                         {
-                          type: 'h4',
+                          type: 'div',
                           props: {
-                            className: 'content-section__block-info-headline'
+                            className: 'headline-wrapper'
                           },
                           children: [
-                            'subtitle'
+                            {
+                              type: 'h4',
+                              props: {
+                                className: 'content-section__block-info-headline',
+                                style: { textAlign: 'center' }
+                              },
+                              children: [
+                                'subtitle'
+                              ]
+                            },
                           ]
                         },
                         {
-                          type: 'p',
+                          type: 'div',
                           props: {
-                            className: 'content-section__block-info-headline p'
+                            className: 'text-wrapper'
                           },
                           children: [
-                            'describe 3-5 lines'
+                            {
+                              type: 'p',
+                              props: {
+                                className: 'content-section__block-info-headline p',
+                                style: { textAlign: 'center' }
+                              },
+                              children: [
+                                'describe 3-5 lines'
+                              ]
+                            }
                           ]
                         }
                       ]

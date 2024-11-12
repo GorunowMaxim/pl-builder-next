@@ -1,0 +1,1 @@
+export { default as RedactorPage } from './ui/RedactorPage'; 

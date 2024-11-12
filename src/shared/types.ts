@@ -10,5 +10,4 @@ export type EditBlockElementProps = {
   props: { [index: string]: any };
   type: React.ElementType;
   value: string;
-  setRedactState: (arg: boolean) => void;
 };

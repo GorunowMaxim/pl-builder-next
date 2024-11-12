@@ -1,0 +1,1 @@
+export { RedactorPage as default } from 'pages/redactorPage';

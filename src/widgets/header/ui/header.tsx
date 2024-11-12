@@ -7,7 +7,10 @@ export const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header-wrapper">
-        <CustomLink className="preview-button link" href="#">
+        <CustomLink className="header-wrapper__link link" href="/">
+          home
+        </CustomLink>
+        <CustomLink className="header-wrapper__link link" href="#">
           preview
         </CustomLink>
         <ChangeAppTheme />

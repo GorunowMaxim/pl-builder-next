@@ -1,14 +1,9 @@
-import { Header } from "widgets/header";
-import { PageEditor } from "widgets/pageEditor";
-
-import { AddBlockPanel } from "features/editPage/addBlock";
+import { HeaderRedactorPage } from "widgets/headerRedactorPage";
 
 export default function HomePage(): JSX.Element {
   return (
     <>
-      <Header />
-      <PageEditor />
-      <AddBlockPanel />
+      <HeaderRedactorPage />
     </>
   );
 }
