@@ -29,26 +29,26 @@ export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePa
         })}
       </block.type>
     );
-  } else {
-    return (
-      <>
-        {block.children.map((child: VirtualNode | string, elemIndex: number): any => {
-          if (typeof child !== "string") {
-            const block = child;
-            return <EditablePageBlock block={block} index={index} EditBlockElement={EditBlockElement} />;
-          }
-
-          return (
-            <EditBlockElement
-              blockIndex={index}
-              elementIndex={elemIndex}
-              value={child}
-              type={block.type}
-              props={block.props}
-            />
-          );
-        })}
-      </>
-    );
   }
+
+  return (
+    <>
+      {block.children.map((child: VirtualNode | string, elemIndex: number): any => {
+        if (typeof child !== "string") {
+          const block = child;
+          return <EditablePageBlock block={block} index={index} EditBlockElement={EditBlockElement} />;
+        }
+
+        return (
+          <EditBlockElement
+            blockIndex={index}
+            elementIndex={elemIndex}
+            value={child}
+            type={block.type}
+            props={block.props}
+          />
+        );
+      })}
+    </>
+  );
 };
