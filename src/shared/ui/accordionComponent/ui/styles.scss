@@ -1,8 +1,16 @@
 .accordion-wrapper {
-  &__tab{
+  width: 100%;
+  padding: 25px 0;
+
+  &__tab {
+    padding: 25px;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 25px;
   }
+
   &__info {
     width: 100%;
 
@@ -10,8 +18,8 @@
       max-height: 0px;
       overflow: hidden;
       transition: 0.3s ease-in-out;
-      background-color: green;
     }
+
     &_visible {
       max-height: 200px;
       overflow: visible;
@@ -21,14 +29,20 @@
   }
 
   &__button {
-    width: 50px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
 
     &_hidden {
-      background-color: green;
+      img{
+        transition: 0.3s ease-in-out;
+      }
     }
     &_visible {
-      background-color: yellow;
+      img{
+        transition: 0.3s ease-in-out;
+        transform: rotate(-180deg);
+      }
     }
   }
 }

@@ -388,27 +388,27 @@ export const blockConfigurations: BlockConfig[] = [
         {
           type: "div",
           props: {
-            className: "faq-section__wrapper",
+            className: "faq-section__wrapper width-wrapper",
             style: {
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '15px',
             }
           },
           children: [
             {
               type: "div",
               props: {
-                className: "headline-wrapper",
+                className: "faq-section__headline-wrapper",
+                style: { width: '80%', margin: '10px 0' }
               },
               children: [
                 {
                   type: "h2",
                   props: {
-                    className: "faq-section__headline",
+                    className: "faq-section__headline headline",
                     style: { color: 'black', textAlign: 'center' }
                   },
                   children: ["FAQ"],
@@ -419,29 +419,78 @@ export const blockConfigurations: BlockConfig[] = [
               type: "div",
               props: {
                 className: "faq-accordion",
+                style: { width: '100%' }
               },
               children: [
                 {
                   type: "div",
                   props: {
-                    className: "faq-accordion__item",
-                    'data-accordion': true,
+                    className: "faq-accordion__wrapper",
+                    style: {
+                      padding: '50px 0',
+                      margin: '0 auto',
+                      width: '60%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }
                   },
                   children: [
                     {
                       type: "div",
                       props: {
-                        className: "text-wrapper",
-                        'data-accordion-tab': true,
+                        className: "faq-accordion__item",
+                        'data-accordion': true,
                       },
                       children: [
                         {
-                          type: "p",
+                          type: "div",
                           props: {
-                            className: "faq-accordion__text",
+                            className: "faq-accordion__text-wrapper",
+                            'data-accordion-tab': true,
+                            style: {
+                              width: '100%',
+                            }
                           },
                           children: [
-                            'sdjkhfjkashfksfhashkf'
+                            {
+                              type: "p",
+                              props: {
+                                className: "faq-accordion__text text",
+                                style: {
+                                  textAlign: 'center',
+                                  fontWeight: '600',
+                                  fontSize: '18px',
+                                }
+                              },
+                              children: [
+                                'Here you can write headline of topic'
+                              ],
+                            },
+                          ],
+                        },
+                        {
+                          type: "div",
+                          props: {
+                            className: "text-wrapper",
+                            'data-accordion-info': true,
+                          },
+                          children: [
+                            {
+                              type: "p",
+                              props: {
+                                className: "faq-accordion__text",
+                                style: {
+                                  padding: '25px',
+                                  fontWeight: '600',
+                                  fontSize: '18px',
+                                }
+                              },
+                              children: [
+                                'sdjkhfjkashfksfhashkf'
+                              ],
+                            },
                           ],
                         },
                       ],
@@ -449,67 +498,62 @@ export const blockConfigurations: BlockConfig[] = [
                     {
                       type: "div",
                       props: {
-                        className: "text-wrapper",
-                        'data-accordion-info': true,
+                        className: "faq-accordion__item",
+                        'data-accordion': true,
                       },
                       children: [
                         {
-                          type: "p",
+                          type: "div",
                           props: {
-                            className: "faq-accordion__text",
+                            className: "faq-accordion__text-wrapper",
+                            'data-accordion-tab': true,
+                            style: {
+                              width: '100%',
+                            }
                           },
                           children: [
-                            'sdjkhfjkashfksfhashkf'
+                            {
+                              type: "p",
+                              props: {
+                                className: "faq-accordion__text text",
+                                style: {
+                                  textAlign: 'center',
+                                  fontWeight: '600',
+                                  fontSize: '18px',
+                                }
+                              },
+                              children: [
+                                'Here you can write headline of topic'
+                              ],
+                            },
+                          ],
+                        },
+                        {
+                          type: "div",
+                          props: {
+                            className: "text-wrapper",
+                            'data-accordion-info': true,
+                          },
+                          children: [
+                            {
+                              type: "p",
+                              props: {
+                                className: "faq-accordion__text",
+                                style: {
+                                  padding: '25px',
+                                  fontWeight: '600',
+                                  fontSize: '18px',
+                                }
+                              },
+                              children: [
+                                'sdjkhfjkashfksfhashkf'
+                              ],
+                            },
                           ],
                         },
                       ],
                     },
-                  ],
-                },
-                {
-                  type: "div",
-                  props: {
-                    className: "faq-accordion__item",
-                    'data-accordion': true,
-                  },
-                  children: [
-                    {
-                      type: "div",
-                      props: {
-                        className: "text-wrapper",
-                        'data-accordion-tab': true,
-                      },
-                      children: [
-                        {
-                          type: "p",
-                          props: {
-                            className: "faq-accordion__text",
-                          },
-                          children: [
-                            'sdjkhfjkashfksfhashkf'
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      type: "div",
-                      props: {
-                        className: "text-wrapper",
-                        'data-accordion-info': true,
-                      },
-                      children: [
-                        {
-                          type: "p",
-                          props: {
-                            className: "faq-accordion__text",
-                          },
-                          children: [
-                            'sdjkhfjkashfksfhashkf'
-                          ],
-                        },
-                      ],
-                    },
-                  ],
+                  ]
                 },
               ],
             },

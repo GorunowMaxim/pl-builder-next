@@ -37,7 +37,7 @@ export const AccordionComponent = ({
                 onClick={() => setAccordionState((state) => !state)}
                 className={`accordion-wrapper__button accordion-wrapper__button${accordionState}`}
               >
-                click
+                <img src='/icons/arrowUp.svg' alt="" />
               </button>
             </div>
           ) : (
