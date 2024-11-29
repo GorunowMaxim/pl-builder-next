@@ -11,6 +11,8 @@ type EditVirtualElement = (
 
 export const editVirtualElement: EditVirtualElement = (elementIndex, value, block, type, props) => {
   const currentBlock = block;
+  console.log('current type', currentBlock.type);
+  console.log('type', type);
   if (currentBlock.type === type && currentBlock.props === props) {
     currentBlock.children[elementIndex] = value;
     return currentBlock;

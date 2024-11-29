@@ -1,0 +1,34 @@
+.accordion-wrapper {
+  &__tab{
+    display: flex;
+    align-items: center;
+  }
+  &__info {
+    width: 100%;
+
+    &_hidden {
+      max-height: 0px;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+      background-color: green;
+    }
+    &_visible {
+      max-height: 200px;
+      overflow: visible;
+      transition: 0.3s ease-in-out;
+      background-color: yellow;
+    }
+  }
+
+  &__button {
+    width: 50px;
+    height: 30px;
+
+    &_hidden {
+      background-color: green;
+    }
+    &_visible {
+      background-color: yellow;
+    }
+  }
+}

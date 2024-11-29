@@ -12,33 +12,36 @@ export const blockConfigurations: BlockConfig[] = [
       type: "section",
       props: {
         className: "hero-section",
-        style: { height: 'calc(100vh - 70px)' }
+        style: { minHeight: '100vh' }
       },
       children: [
         {
           type: "div",
           props: {
-            className: "hero-section__wrapper",
+            className: "hero-section__wrapper width-wrapper",
             style: {
-              height: '100%',
+              minHeight: '100vh',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '15px',
             }
           },
           children: [
             {
               type: "div",
               props: {
-                className: "subtitle-wrapper",
+                className: "hero-section__subtitle-wrapper",
+                style: {
+                  width: '80%',
+                  margin: '10px 0',
+                }
               },
               children: [
                 {
                   type: "h4",
                   props: {
-                    className: "hero-section__subtitle",
+                    className: "hero-section__subtitle subtitle",
                     style: { color: 'black', textAlign: 'center' }
                   },
                   children: ["subtitle"],
@@ -48,13 +51,17 @@ export const blockConfigurations: BlockConfig[] = [
             {
               type: "div",
               props: {
-                className: "headline-wrapper",
+                className: "hero-section__headline-wrapper",
+                style: {
+                  width: '80%',
+                  margin: '10px 0',
+                }
               },
               children: [
                 {
                   type: "h1",
                   props: {
-                    className: "hero-section__headline",
+                    className: "hero-section__headline headline",
                     style: { color: 'black', textAlign: 'center' }
                   },
                   children: ["Hero section"],
@@ -64,13 +71,17 @@ export const blockConfigurations: BlockConfig[] = [
             {
               type: "div",
               props: {
-                className: "text-wrapper text-wrapper_center",
+                className: "hero-section__text-wrapper",
+                style: {
+                  width: '80%',
+                  margin: '10px 0',
+                }
               },
               children: [
                 {
                   type: "p",
                   props: {
-                    className: "hero-section__text p",
+                    className: "hero-section__text text p",
                     style: { textAlign: 'center', color: 'black' }
                   },
                   children: ["Hey yeah! It's a hero section, here u can describe your landing, tell about it a little or write what u wanna!"],
@@ -94,7 +105,7 @@ export const blockConfigurations: BlockConfig[] = [
         {
           type: "div",
           props: {
-            className: "info-section__wrapper",
+            className: "info-section__wrapper width-wrapper",
             style: {
               display: 'flex',
               flexDirection: 'column',
@@ -106,18 +117,19 @@ export const blockConfigurations: BlockConfig[] = [
             {
               type: "div",
               props: {
-                className: "text-wrapper",
+                className: "info-section__text-wrapper",
+                style: {
+                  width: '80%'
+                }
               },
               children: [
                 {
                   type: "p",
                   props: {
-                    className: "info-section__text p",
+                    className: "info-section__text text p",
                     style: {
-                      width: '100%',
                       textAlign: 'center',
                       color: 'black',
-                      backgroundColor: 'white'
                     }
                   },
                   children: ["Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied. Front matter, or preliminaries, is the first section of a book and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed or printed, on either display pages or blank pages."],
@@ -142,28 +154,28 @@ export const blockConfigurations: BlockConfig[] = [
         {
           type: "div",
           props: {
-            className: "content-section__wrapper",
+            className: "content-section__wrapper width-wrapper",
             style: {
               height: 'auto',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
-              gap: '10px',
+              justifyContent: 'flex-start',
             }
           },
           children: [
             {
               type: "div",
               props: {
-                className: "headline-wrapper",
+                className: "content-section__headline-wrapper",
+                style: { width: '70%', margin: '10px 0' },
               },
               children: [
                 {
                   type: "h2",
                   props: {
-                    className: "content-section__headline",
-                    style: { textAlign: 'center' }
+                    className: "content-section__headline headline",
+                    style: { textAlign: 'center', color: 'black' }
                   },
                   children: ["Headline - tell smth about it"],
                 },
@@ -172,14 +184,15 @@ export const blockConfigurations: BlockConfig[] = [
             {
               type: "div",
               props: {
-                className: "text-wrapper",
+                className: "content-section__text-wrapper",
+                style: { width: '70%', margin: '10px 0' },
               },
               children: [
                 {
                   type: "p",
                   props: {
-                    className: "content-section__text p",
-                    style: { textAlign: 'center' }
+                    className: "content-section__text text p",
+                    style: { textAlign: 'center', color: 'black' }
                   },
                   children: ["Description – the main idea. Use 1-2 sentences in 1-3 lines if centered. For more text, use a different content alignment type."],
                 },
@@ -219,20 +232,21 @@ export const blockConfigurations: BlockConfig[] = [
                       type: 'div',
                       props: {
                         className: 'content-section__block-info',
-                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', gap: '10px' }
+                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px' }
                       },
                       children: [
                         {
                           type: 'div',
                           props: {
-                            className: 'headline-wrapper'
+                            className: 'content-section__headline-wrapper',
+                            style: { width: '90%', margin: '10px 0' },
                           },
                           children: [
                             {
                               type: 'h4',
                               props: {
-                                className: 'content-section__block-info-headline',
-                                style: { textAlign: 'center' }
+                                className: 'content-section__block-info-headline headline',
+                                style: { textAlign: 'center', color: 'black' }
                               },
                               children: [
                                 'subtitle'
@@ -243,14 +257,15 @@ export const blockConfigurations: BlockConfig[] = [
                         {
                           type: 'div',
                           props: {
-                            className: 'text-wrapper'
+                            className: 'content-section__text-wrapper',
+                            style: { width: '90%', margin: '10px 0' },
                           },
                           children: [
                             {
                               type: 'p',
                               props: {
-                                className: 'content-section__block-info-headline p',
-                                style: { textAlign: 'center' }
+                                className: 'content-section__block-info-text text p',
+                                style: { textAlign: 'center', color: 'black' }
                               },
                               children: [
                                 'describe 3-5 lines'
@@ -266,7 +281,7 @@ export const blockConfigurations: BlockConfig[] = [
                   type: "div",
                   props: {
                     className: "content-section__block",
-                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row-reverse', padding: '35px 0', gap: '55px' }
+                    style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row-reverse', padding: '55px 0', gap: '55px' }
                   },
                   children: [
                     {
@@ -290,20 +305,21 @@ export const blockConfigurations: BlockConfig[] = [
                       type: 'div',
                       props: {
                         className: 'content-section__block-info',
-                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px', gap: '10px' }
+                        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '500px', height: '500px' }
                       },
                       children: [
                         {
                           type: 'div',
                           props: {
-                            className: 'headline-wrapper'
+                            className: 'content-section__headline-wrapper',
+                            style: { width: '90%', margin: '10px 0' },
                           },
                           children: [
                             {
                               type: 'h4',
                               props: {
-                                className: 'content-section__block-info-headline',
-                                style: { textAlign: 'center' }
+                                className: 'content-section__block-info-headline headline',
+                                style: { textAlign: 'center', color: 'black' }
                               },
                               children: [
                                 'subtitle'
@@ -314,14 +330,15 @@ export const blockConfigurations: BlockConfig[] = [
                         {
                           type: 'div',
                           props: {
-                            className: 'text-wrapper'
+                            className: 'content-section__text-wrapper',
+                            style: { width: '90%', margin: '10px 0' },
                           },
                           children: [
                             {
                               type: 'p',
                               props: {
-                                className: 'content-section__block-info-headline p',
-                                style: { textAlign: 'center' }
+                                className: 'content-section__block-info-text text p',
+                                style: { textAlign: 'center', color: 'black' }
                               },
                               children: [
                                 'describe 3-5 lines'
@@ -383,18 +400,118 @@ export const blockConfigurations: BlockConfig[] = [
           },
           children: [
             {
-              type: "h2",
+              type: "div",
               props: {
-                className: "faq-section__headline",
+                className: "headline-wrapper",
               },
-              children: ["FAQ"],
+              children: [
+                {
+                  type: "h2",
+                  props: {
+                    className: "faq-section__headline",
+                    style: { color: 'black', textAlign: 'center' }
+                  },
+                  children: ["FAQ"],
+                },
+              ],
             },
             {
-              type: "p",
+              type: "div",
               props: {
-                className: "faq-section__text p",
+                className: "faq-accordion",
               },
-              children: ["FAQ"],
+              children: [
+                {
+                  type: "div",
+                  props: {
+                    className: "faq-accordion__item",
+                    'data-accordion': true,
+                  },
+                  children: [
+                    {
+                      type: "div",
+                      props: {
+                        className: "text-wrapper",
+                        'data-accordion-tab': true,
+                      },
+                      children: [
+                        {
+                          type: "p",
+                          props: {
+                            className: "faq-accordion__text",
+                          },
+                          children: [
+                            'sdjkhfjkashfksfhashkf'
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: "div",
+                      props: {
+                        className: "text-wrapper",
+                        'data-accordion-info': true,
+                      },
+                      children: [
+                        {
+                          type: "p",
+                          props: {
+                            className: "faq-accordion__text",
+                          },
+                          children: [
+                            'sdjkhfjkashfksfhashkf'
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  type: "div",
+                  props: {
+                    className: "faq-accordion__item",
+                    'data-accordion': true,
+                  },
+                  children: [
+                    {
+                      type: "div",
+                      props: {
+                        className: "text-wrapper",
+                        'data-accordion-tab': true,
+                      },
+                      children: [
+                        {
+                          type: "p",
+                          props: {
+                            className: "faq-accordion__text",
+                          },
+                          children: [
+                            'sdjkhfjkashfksfhashkf'
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: "div",
+                      props: {
+                        className: "text-wrapper",
+                        'data-accordion-info': true,
+                      },
+                      children: [
+                        {
+                          type: "p",
+                          props: {
+                            className: "faq-accordion__text",
+                          },
+                          children: [
+                            'sdjkhfjkashfksfhashkf'
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },

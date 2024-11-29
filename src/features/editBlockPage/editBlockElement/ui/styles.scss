@@ -1,18 +1,40 @@
 .custom-form {
+  position: relative;
   width: 100%;
-  border: 3px dashed var(--border-color);
+  height: auto;
 
   &__area {
-    padding: 5px;
+    padding: 10px 5px;
     width: 100%;
     height: 100%;
+    line-height: 120%;
     text-align: center;
     resize: none;
+    overflow: hidden;
+    background-color: transparent;
+    background-color: rgba(236, 236, 236, 0.651);
   }
 
   &__input {
     width: 100%;
     height: 100%;
     text-align: center;
+    background-color: transparent;
+    background-color: rgba(236, 236, 236, 0.651);
+  }
+
+  &__button{
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+
+    svg{
+      width: 20px;
+      height: 20px;
+    }
   }
 }

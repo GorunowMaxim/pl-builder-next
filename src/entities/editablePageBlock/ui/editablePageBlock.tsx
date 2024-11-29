@@ -3,6 +3,7 @@
 import { ElementType } from "react";
 
 import { EditBlockElementProps, VirtualNode } from "shared/types";
+import { AccordionComponent } from "shared/ui/accordionComponent";
 
 const redactElements: ElementType[] = ["p", "h1", "h2", "h3", "h4", "h5", "h6"];
 const singleTags: ElementType[] = ["img"];
@@ -15,6 +16,17 @@ type EditablePageBlockProps = {
 
 export const EditablePageBlock = ({ block, index, EditBlockElement }: EditablePageBlockProps): JSX.Element => {
   if (singleTags.includes(block.type)) return <block.type {...block.props} />;
+  if (block.props["data-accordion"] === true) {
+    console.log("render accordion");
+    return (
+      <AccordionComponent
+        children={block.children}
+        blockIndex={index}
+        EditeBlockElement={EditBlockElement}
+        EditablePageBlock={EditablePageBlock}
+      />
+    );
+  }
 
   if (!redactElements.includes(block.type)) {
     return (
