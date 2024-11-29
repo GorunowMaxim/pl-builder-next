@@ -1,0 +1,1 @@
+export { ViewPage as default } from 'pages/viewPage';
