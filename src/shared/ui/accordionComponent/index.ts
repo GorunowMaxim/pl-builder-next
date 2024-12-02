@@ -1,1 +1,0 @@
-export { AccordionComponent } from './ui/accordion';

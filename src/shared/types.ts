@@ -7,7 +7,6 @@ export type VirtualNode = {
 export type EditBlockElementProps = {
   blockIndex: number;
   elementIndex: number;
-  props: { [index: string]: any };
-  type: React.ElementType;
+  block: VirtualNode;
   value: string;
 };

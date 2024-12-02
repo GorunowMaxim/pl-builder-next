@@ -1,6 +1,6 @@
 "use client";
 
-import { ElementType, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
 
 import { editVirtualBlock } from "entities/editablePage";
@@ -9,16 +9,12 @@ import { EditBlockElementProps } from "shared/types";
 
 import "./styles.scss";
 
-export const EditBlockElement = ({
-  blockIndex,
-  elementIndex,
-  props,
-  type,
-  value,
-}: EditBlockElementProps): JSX.Element => {
+export const EditElement = ({ blockIndex, elementIndex, block, value }: EditBlockElementProps): JSX.Element => {
   const [inputValue, setInputValue] = useState<string>(value);
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [currentHeight, setCurrentHeight] = useState<string>("auto");
+
+  const { type, props } = block;
 
   const htmlElemRef = useRef<HTMLElement | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -52,8 +48,6 @@ export const EditBlockElement = ({
       formRef.current?.removeEventListener("submit", handleSubmit);
     };
   }, [isEditing]);
-
-  const block = { type };
 
   return isEditing ? (
     <form ref={formRef} className="custom-form">

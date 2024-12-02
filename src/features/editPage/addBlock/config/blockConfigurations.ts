@@ -442,6 +442,9 @@ export const blockConfigurations: BlockConfig[] = [
                       props: {
                         className: "faq-accordion__item",
                         'data-accordion': true,
+                        style: {
+                          width: '100%',
+                        }
                       },
                       children: [
                         {
@@ -500,6 +503,9 @@ export const blockConfigurations: BlockConfig[] = [
                       props: {
                         className: "faq-accordion__item",
                         'data-accordion': true,
+                        style: {
+                          width: '100%',
+                        }
                       },
                       children: [
                         {

@@ -8,7 +8,7 @@ import { EditablePage, usePageStore } from "entities/editablePage";
 import "./styles.scss";
 import { RenderChildren } from "./renderBlock";
 
-export const PageEditor = (): JSX.Element => {
+export const BlockEditor = (): JSX.Element => {
   const blocks = usePageStore((state) => state.blocks);
   return (
     <EditablePage>
