@@ -1,9 +1,9 @@
-.custom-form {
+.editable-element {
   position: relative;
   width: 100%;
   height: auto;
 
-  &__area {
+  &__text-area {
     padding: 10px 5px;
     width: 100%;
     height: 100%;
@@ -11,14 +11,6 @@
     text-align: center;
     resize: none;
     overflow: hidden;
-    background-color: transparent;
-    background-color: rgba(236, 236, 236, 0.651);
-  }
-
-  &__input {
-    width: 100%;
-    height: 100%;
-    text-align: center;
     background-color: transparent;
     background-color: rgba(236, 236, 236, 0.651);
   }

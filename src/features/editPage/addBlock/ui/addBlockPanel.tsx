@@ -15,7 +15,7 @@ export const AddBlockPanel = (): JSX.Element => {
             <button
               key={id}
               onClick={() => {
-                const copyTemplate = JSON.parse(JSON.stringify(block.template));
+                const copyTemplate = structuredClone(block.template);
                 addVirtualBlock(copyTemplate);
               }}
               className="add-panel__button"

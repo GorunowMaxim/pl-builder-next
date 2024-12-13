@@ -3,7 +3,7 @@ export { type VirtualTree } from "./model/models";
 export {
   addVirtualBlock,
   deleteVirtualBlock,
-  editVirtualBlock,
+  updateVirtualBlock,
   translateVirtualBlockDown,
   translateVirtualBlockUp,
   usePageStore

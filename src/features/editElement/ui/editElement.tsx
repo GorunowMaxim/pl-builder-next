@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
 
-import { editVirtualBlock } from "entities/editablePage";
+import { updateVirtualBlock } from "entities/editablePage";
 
 import { EditBlockElementProps } from "shared/types";
 
@@ -13,16 +13,15 @@ export const EditElement = ({ blockIndex, elementIndex, block, value }: EditBloc
   const [inputValue, setInputValue] = useState<string>(value);
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [currentHeight, setCurrentHeight] = useState<string>("auto");
-
+  
   const { type, props } = block;
 
   const htmlElemRef = useRef<HTMLElement | null>(null);
-  const formRef = useRef<HTMLFormElement | null>(null);
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const buttonHandleClick = () => {
     setIsEditing(false);
-    editVirtualBlock(blockIndex, elementIndex, inputValue, type, props);
+    updateVirtualBlock(blockIndex, elementIndex, inputValue, type, props);
   };
 
   const textAreaHandleClick = () => {
@@ -32,37 +31,26 @@ export const EditElement = ({ blockIndex, elementIndex, block, value }: EditBloc
   };
 
   useEffect(() => {
-    const handleSubmit = (event: Event) => {
-      event.preventDefault();
-    };
-
     if (htmlElemRef.current) {
       setCurrentHeight(`${htmlElemRef.current.offsetHeight + 20}px`);
     }
-
-    textAreaRef.current?.focus();
-
-    formRef.current?.addEventListener("submit", handleSubmit);
-
-    return () => {
-      formRef.current?.removeEventListener("submit", handleSubmit);
-    };
   }, [isEditing]);
 
   return isEditing ? (
-    <form ref={formRef} className="custom-form">
+    <div className="editable-element">
       <textarea
+        autoFocus
         ref={textAreaRef}
         style={{ height: currentHeight }}
         onInput={textAreaHandleClick}
         onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
-        className={`custom-form__area ${type}`}
+        className={`editable-element__text-area ${type}`}
       ></textarea>
-      <button className="custom-form__button" onClick={buttonHandleClick}>
+      <button className="editable-element__button" onClick={buttonHandleClick}>
         <EditOutlined />
       </button>
-    </form>
+    </div>
   ) : (
     <block.type ref={htmlElemRef} {...props} onClick={() => setIsEditing(true)}>
       {value}

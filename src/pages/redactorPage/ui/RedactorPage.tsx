@@ -1,5 +1,5 @@
 import { Header } from "widgets/header";
-import { PageEditor } from "widgets/pageEditor";
+import { EditableBlock } from "widgets/editableBlock";
 
 import { AddBlockPanel } from "features/editPage/addBlock";
 import { CustomLink } from "shared/ui/link";
@@ -15,7 +15,7 @@ export default function RedactorPage(): JSX.Element {
           preview
         </CustomLink>
       </Header>
-      <PageEditor />
+      <EditableBlock />
       <AddBlockPanel />
     </>
   );

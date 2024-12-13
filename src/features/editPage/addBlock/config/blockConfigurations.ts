@@ -5,6 +5,8 @@ type BlockConfig = {
   template: VirtualNode;
 };
 
+// проработать конфиг для его дольнейшего перемещения на сервер и подгрузки в localstorage
+
 export const blockConfigurations: BlockConfig[] = [
   {
     title: "hero section",

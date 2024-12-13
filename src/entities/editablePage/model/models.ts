@@ -6,7 +6,7 @@ export type VirtualTree = {
   blocks: VirtualNode[];
 }
 
-export type EditVirtualBlock = (
+export type UpdateVirtualBlock = (
   blockIndex: number,
   elementIndex: number,
   value: string,

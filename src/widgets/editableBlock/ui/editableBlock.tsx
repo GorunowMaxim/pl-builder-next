@@ -5,10 +5,11 @@ import { TranslateDown, TranslateUp } from "features/editPage/translateBlock";
 
 import { EditablePage, usePageStore } from "entities/editablePage";
 
-import "./styles.scss";
 import { RenderChildren } from "./renderBlock";
 
-export const BlockEditor = (): JSX.Element => {
+import "./styles.scss";
+
+export const EditableBlock = (): JSX.Element => {
   const blocks = usePageStore((state) => state.blocks);
   return (
     <EditablePage>
